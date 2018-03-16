@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <title>Мир в коробке</title>
+    <link href="https://use.fontawesome.com/c281acfaa9.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.js"></script>
+    <script>(function() {
+  (function($) {
+    return $(function() {
+      return $('.button-collapse').sideNav();
+    });
+  })(jQuery);
+
+}).call(this);
+
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav class="lighten-1 light-blue" role="navigation">
+        <div class="nav-wrapper container"><a class="brand-logo" id="logo-container" href="/">Мир в коробке</a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/">Анонсы</a></li>
+            <li><a href="#">Игры</a></li>
+            <li class="active"><a href="/place">Место</a></li>
+            <li><a href="/about">О нас</a></li>
+          </ul>
+          <ul class="side-nav" id="nav-mobile">
+            <li><a href="/">Анонсы</a></li>
+            <li><a href="#">Игры</a></li>
+            <li class="active"><a href="/place">Место</a></li>
+            <li><a href="/about">О нас</a></li>
+          </ul><a class="button-collapse" href="#" data-activates="nav-mobile"><i class="material-icons">menu</i></a>
+        </div>
+      </nav>
+    </header>
+    <main class="container">
+      <div class="section">
+        <div class="row">
+          <div class="col s12">
+            <ul class="tabs">
+              <li class="tab"><a href="#day">До 19:00</a></li>
+              <li class="tab"><a href="#evening">После 19:00</a></li>
+            </ul>
+          </div>
+          <div class="col s12 m6">
+            <div class="card">
+              <div class="card-image">
+                <div class="video-container">
+                  <iframe frameborder="0" style="border:0;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCZbS1duxqw1aK85_2oi1zzA2tXrvhQ7ig&amp;q=The Palace of Labor, Konstytutsii Square, Kharkiv, Kharkiv Oblast" allowfullscreen></iframe>
+                </div>
+              </div>
+              <div class="card-content"><h4>Дворец труда</h4>
+<p>Харьков, Площадь конституции д.1</p>
+<p>метро Площадь конституции</p>
+
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6" id="day">
+            <div class="card">
+              <div class="card-image">
+                <div class="video-container">
+                  <iframe frameborder="0" style="border:0;" allowfullscreen src="https://www.google.com/maps/embed/v1/streetview?key=AIzaSyCZbS1duxqw1aK85_2oi1zzA2tXrvhQ7ig&amp;location=49.9887823,36.2327396&amp;heading=269.4&amp;pitch=0.04000000000000625&amp;fov=23.9"></iframe>
+                </div>
+                <div class="card-title"> <i class="fa fa-sun-o"></i> <span>HILLEL до 19:00</span>
+                </div>
+              </div>
+              <div class="card-content"><h4>Дворец труда, подъезд №3</h4>
+<p>Второй этаж, налево в двери, направо в зал.</p>
+
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6" id="evening">
+            <div class="card">
+              <div class="card-image">
+                <div class="video-container">
+                  <iframe frameborder="0" style="border:0;" allowfullscreen src="https://www.google.com/maps/embed/v1/streetview?key=AIzaSyCZbS1duxqw1aK85_2oi1zzA2tXrvhQ7ig&amp;location=49.988777,36.231654&amp;heading=117&amp;pitch=-8&amp;fov=47"></iframe>
+                </div>
+                <div class="card-title"> <i class="fa fa-moon-o"></i> <span>HILLEL после 19:00</span>
+                </div>
+              </div>
+              <div class="card-content"><h4>Дворец труда, подъезд №6</h4>
+<p>Второй этаж, направо в двери, прямо через коридор в большую дверь, прямо через лестничную клетку, налево в зал.</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="page-footer orange">
+      <style>body { display: flex; min-height: 100vh; flex-direction: column; } main { flex: 1 0 auto; }</style>
+      <div class="footer-copyright">
+        <div class="container">Made by <a class="text-lighten-3 orange-text" href="https://github.com/ja-card">ja-card</a>
+          <div class="right">Мир в коробке  <i class="fa fa-copyright"></i> 2018
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
