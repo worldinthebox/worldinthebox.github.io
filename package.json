@@ -1,0 +1,16 @@
+{
+  "name": "worldinthebox",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Yury Tvardovsky <oziabr@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "coffeescript": "^2.2.4",
+    "http-server": "^0.11.1"
+  },
+  "dependencies": {},
+  "scripts": {
+    "build": "node -e \"require('stabuilder').build()\""
+  }
+}

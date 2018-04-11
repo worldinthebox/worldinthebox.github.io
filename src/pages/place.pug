@@ -1,0 +1,36 @@
+---
+menu:
+  title: Место
+  order: 3
+---
+
+extends ../layout
+
+block body
+    +header
+      +menu(global.menu, attributes.menu)
+    main.container: .section: .row
+      .col.s12
+        ul.tabs
+          +item('#day').tab До 19:00
+          +item('#evening').tab После 19:00
+
+      .col.s12.m6
+        +map('HILLEL', 'The Palace of Labor, Konstytutsii Square, Kharkiv, Kharkiv Oblast')
+          :markdown-it
+            #### Дворец труда
+            Харьков, Площадь конституции д.1
+
+            метро Площадь конституции
+
+      #day.col.s12.m6
+        +streetview('HILLEL до 19:00', 'fa-sun-o', '@49.9887823,36.2327396,3a,23.9y,269.4h,90.04t')
+          :markdown-it
+            #### Дворец труда, подъезд №3
+            Второй этаж, налево в двери, направо в зал.
+
+      #evening.col.s12.m6
+        +streetview('HILLEL после 19:00', 'fa-moon-o', '@49.988777,36.231654,3a,47y,117h,82t')
+          :markdown-it
+            #### Дворец труда, подъезд №6
+            Второй этаж, направо в двери, прямо через коридор в большую дверь, прямо через лестничную клетку, налево в зал.

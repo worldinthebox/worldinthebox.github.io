@@ -1,0 +1,33 @@
+---
+menu:
+  title: Анонсы
+  order: 1
+---
+
+extends ../layout
+
+block body
+    +header
+      +menu(global.menu, attributes.menu)
+    main.container: section: .row
+      br
+      br
+      .col.s12.m6
+        .card
+          .card-content
+            span.card-title Воскресная игротека в HILLEL
+            :markdown-it
+              I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.
+          .card-action
+            a(href='/place#day') День (до 19:00)
+            a(href='/place#evening') Вечер (после 19:00)
+      .col.s12.m6
+        .card
+          .card-content
+            span.card-title Пятничная игротека в HILLEL
+            p
+              | I am a very simple card. I am good at containing small bits of information.
+              | I am convenient because I require little markup to use effectively.
+          .card-action
+            a(href='/place#evening') Место

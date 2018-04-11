@@ -1,0 +1,74 @@
+- colorOne = 'orange'
+- colorTwo = 'light-blue'
+- title = 'Мир в коробке'
+- gmapkey = 'AIzaSyCZbS1duxqw1aK85_2oi1zzA2tXrvhQ7ig'
+
+mixin button(link)
+  | 
+  a&attributes(attributes).btn(href=link)
+    block
+
+mixin css(url)
+  link&attributes(attributes)(href=url, type='text/css', rel='stylesheet')
+
+mixin title
+  title= title
+
+mixin item(url, active)
+  if active
+    li.active&attributes(attributes): a(href=url): block
+  else
+    li&attributes(attributes): a(href=url): block
+
+mixin menu(menu, self)
+  each item in menu
+    +item(item.path, self.path == item.path)= item.title
+
+mixin header
+  header: nav.lighten-1(class=colorTwo, role='navigation')
+    .nav-wrapper.container
+      a#logo-container.brand-logo(href='/')= title
+      ul.right.hide-on-med-and-down: block
+      ul#nav-mobile.side-nav: block
+      a.button-collapse(href='#', data-activates='nav-mobile')
+        i.material-icons menu
+
+mixin icon(name)
+  if name
+    -var fa = name.startsWith('fa-')
+    | 
+    if fa
+      i&attributes(attributes).fa(class=name)
+    else
+      i.material-icons&attributes(attributes)= name
+    | 
+
+mixin streetview(title, icon, location)
+  - location = location.replace(/@([\d.]+,[\d.]+),[\d.]+a,([\d.]+)y,([\d.]+)h,([\d.]+)t/, (x, l, f, h, t) => `https://www.google.com/maps/embed/v1/streetview?key=${gmapkey}&location=${l}&heading=${h}&pitch=${t-90}&fov=${f}`)
+  .card
+    .card-image
+      .video-container: iframe(frameborder="0" style="border:0" allowfullscreen src=location)
+      .card-title
+        +icon(icon)
+        span= title
+    .card-content
+      block
+
+mixin map(title, location)
+  - location = `https://www.google.com/maps/embed/v1/place?key=${gmapkey}&q=${location}`
+  .card
+    .card-image
+      .video-container: iframe(frameborder="0" style="border:0" src=location allowfullscreen)
+    .card-content
+      block
+
+mixin footer
+  footer.page-footer(class=colorOne)
+    style body { display: flex; min-height: 100vh; flex-direction: column; } main { flex: 1 0 auto; }
+    .footer-copyright: .container
+      | Made by 
+      a.text-lighten-3(href='https://github.com/ja-card' class=colorOne+"-text") ja-card
+      .right
+        | Мир в коробке 
+        +icon('fa-copyright')
+        | 2018
