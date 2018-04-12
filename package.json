@@ -9,7 +9,8 @@
     "coffeescript": "^2.2.4",
     "http-server": "^0.11.1"
   },
-  "dependencies": {},
+  "dependencies": {
+  },
   "scripts": {
     "build": "node -e \"require('stabuilder').build()\""
   }

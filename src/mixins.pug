@@ -72,3 +72,10 @@ mixin footer
         | Мир в коробке 
         +icon('fa-copyright')
         | 2018
+
+mixin filckr-gallery(str, title, x=200, y=x)
+  - var args = str.replace(/([0-9]+@[A-Z][0-9]+)\/sets\/([0-9]+)/, `{"kind":"flickr","userID":"$1","thumbnailHeight":"${x}","thumbnailWidth":"${y}","photoset":"$2"}`)
+  +css("https://unpkg.com/nanogallery2@2.1.0/dist/css/nanogallery2.min.css")
+  script(src="https://unpkg.com/nanogallery2@2.1.0/dist/jquery.nanogallery2.min.js")
+  h1= title
+  .nanogallery2(data-nanogallery2=args)
