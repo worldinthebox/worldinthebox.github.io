@@ -6,12 +6,20 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
+    "chokidar-cli": "^1.2.0",
+    "cmd-watch": "^1.0.10",
     "coffeescript": "^2.2.4",
-    "http-server": "^0.11.1"
+    "http-server": "^0.11.1",
+    "simple-autoreload-server": "^0.2.7"
   },
   "dependencies": {
+    "stabuilder": "^0.1.3"
   },
   "scripts": {
-    "build": "node -e \"require('stabuilder').build()\""
+    "build": "node -e \"require('stabuilder').build()\"",
+    "clean": "rm -rf ./out",
+    "serve": "./node_modules/.bin/autoreload-server --no-list-directory out/",
+    "watch": "./node_modules/.bin/chokidar 'src/**' -i '/[/][.]/' -d 500 -c 'yarn build'",
+    "dev": "yarn clean; yarn build; yarn watch & yarn serve"
   }
 }
