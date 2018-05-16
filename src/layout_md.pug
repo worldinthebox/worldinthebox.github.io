@@ -1,0 +1,23 @@
+doctype html
+include mixins
+html(lang='en')
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1.0')
+    link(rel="shortcut icon", href="http://www.prairiecon.com/wp-content/uploads/2016/10/FaviconDice.png")
+    +title
+    +css('https://use.fontawesome.com/c281acfaa9.css')
+    +css('https://fonts.googleapis.com/icon?family=Material+Icons')
+    +css('https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css')(media='screen,projection')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js')
+    script(defer src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.js')
+    script
+      :coffee-script
+        (($) -> $ -> $('.button-collapse').sideNav()) jQuery
+    block head
+  body
+    +header
+      +menu(global.menu, attributes.menu)
+    main: .container
+      block body
+    +footer

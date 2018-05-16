@@ -22,7 +22,7 @@ mixin item(url, active)
 
 mixin menu(menu, self)
   each item in menu
-    +item(item.path, self.path == item.path)= item.title
+    +item(item.path, self && self.path == item.path)= item.title
 
 mixin header
   header: nav.lighten-1(class=colorTwo, role='navigation')
