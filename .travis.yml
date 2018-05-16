@@ -5,7 +5,11 @@ node_js:
 before_script:
   - yarn add stabuilder
 
-script: "yarn run build"
+script: "yarn build"
+
+cache:
+  directories:
+    - node_modules
 
 deploy:
   provider: pages
@@ -20,4 +24,3 @@ deploy:
 branches:
   only:
   - dev
-  - preview
