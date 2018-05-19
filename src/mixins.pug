@@ -25,9 +25,11 @@ mixin menu(menu, self)
     +item(item.path, self && self.path == item.path)= item.title
 
 mixin header
+  style a.brand-logo small {white-space: nowrap;}
   header: nav.lighten-1(class=colorTwo, role='navigation')
     .nav-wrapper.container
-      a#logo-container.brand-logo(href='/')= title
+      a#logo-container.brand-logo.hide-on-small-only(href='/')= title
+      a#logo-container.brand-logo.hide-on-med-and-up(href='/'): small= title
       ul.right.hide-on-med-and-down: block
       ul#nav-mobile.side-nav: block
       a.button-collapse(href='#', data-activates='nav-mobile')
@@ -79,3 +81,9 @@ mixin filckr-gallery(str, title, x=200, y=x)
   script(src="https://unpkg.com/nanogallery2@2.1.0/dist/jquery.nanogallery2.min.js")
   h1= title
   .nanogallery2(data-nanogallery2=args)
+
+mixin h1
+  h1.header.center.hide-on-small-only(class=colorOne+"-text")
+    block
+  h3.header.hide-on-med-and-up(class=colorOne+"-text")
+    block
